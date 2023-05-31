@@ -1,4 +1,18 @@
 <script>
-  document.write(Date.now(););
-  Date.now();
+ document.write((comparatorQomrades(Date.now()))/1000);
+ 
+function comparatorQomrades(epoch1){
+var base = 1673136000*1000;
+ do{
+	base=base+(604800*1000);
+ }while(epoch1>base);
+return base; 
+}
+ 
+ function EpocToDate(epoch) {
+var date = new Date(epoch);
+//Uses built-in date function that converts to the time format I want
+var formattedTime = date.toLocaleString();
+return formattedTime;
+}
 </script>
